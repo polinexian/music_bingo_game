@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 大字模式預設 — elderly-friendly */
+  html {
+    font-size: 22px;
+  }
+}
+
+@layer components {
+  /* 大型按鈕 — 長者友善 */
+  .btn-primary {
+    @apply bg-accent-gold text-bg-dark font-bold py-4 px-8 rounded-xl text-title
+           min-w-[200px] min-h-[56px] transition-all duration-200
+           hover:brightness-110 active:scale-95
+           focus:outline-none focus:ring-4 focus:ring-accent-gold/50;
+  }
+
+  .btn-secondary {
+    @apply bg-bg-card text-text-light font-semibold py-3 px-6 rounded-xl text-subtitle
+           min-w-[160px] min-h-[56px] border-2 border-text-muted/30 transition-all duration-200
+           hover:border-accent-gold/50 active:scale-95
+           focus:outline-none focus:ring-4 focus:ring-text-muted/30;
+  }
+
+  .btn-danger {
+    @apply bg-accent-red/20 text-accent-red font-semibold py-3 px-6 rounded-xl text-subtitle
+           min-w-[160px] min-h-[56px] border-2 border-accent-red/40 transition-all duration-200
+           hover:bg-accent-red/30 active:scale-95
+           focus:outline-none focus:ring-4 focus:ring-accent-red/30;
+  }
+
+  .btn-success {
+    @apply bg-accent-green/20 text-accent-green font-semibold py-3 px-6 rounded-xl text-subtitle
+           min-w-[160px] min-h-[56px] border-2 border-accent-green/40 transition-all duration-200
+           hover:bg-accent-green/30 active:scale-95
+           focus:outline-none focus:ring-4 focus:ring-accent-green/30;
+  }
+
+  /* 卡片樣式 */
+  .card {
+    @apply bg-bg-card rounded-2xl p-6 shadow-lg;
+  }
+
+  /* 投影畫面大字 — visible from 10+ meters */
+  .display-text-xl {
+    font-size: 6rem;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .display-text-lg {
+    font-size: 4rem;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  .display-text-md {
+    font-size: 3rem;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+}
